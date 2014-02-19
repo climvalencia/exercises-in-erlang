@@ -1,0 +1,10 @@
+{application, exercises_in_erlang,
+    [
+        {description, ""},
+        {vsn, git},
+        {registered, []},
+        {applications, []},
+        {env, []}
+    ]
+}.
+

@@ -1,11 +1,15 @@
-SRC_DIR = src
-EBIN_DIR = ebin
+.PHONY: deps
 
-all: compile
+all: deps compile
 
 compile:
-	@mkdir -p $(EBIN_DIR)
-	erlc -o $(EBIN_DIR) $(SRC_DIR)/*.erl
+	./rebar compile
 
 clean:
-	rm -rf $(EBIN_DIR)/*.beam
+	./rebar clean
+
+deps:
+	./rebar get-deps
+
+eunit:
+	./rebar skip_deps=true eunit
